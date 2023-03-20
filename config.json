@@ -1,0 +1,27 @@
+{
+  "defaultTarget": "twitch.tv/{target}",
+  "playerTitle": "{target} - {device}",
+  "variables": {
+    "prefix": "twitch.tv/youreventrunnerchannels",
+    "line1": "Line 01 (Synchronous Audio Router)",
+    "line2": "Line 02 (Synchronous Audio Router)",
+    "line3": "Line 03 (Synchronous Audio Router)",
+    "line4": "Line 04 (Synchronous Audio Router)"
+  },
+  "channels": [
+    { "set": "1", "key": "1a", "target": "{prefix}1a", "device": "{line1}" },
+    { "set": "1", "key": "1b", "target": "{prefix}1b", "device": "{line2}" },
+    { "set": "1", "key": "1c", "target": "{prefix}1c", "device": "{line3}" },
+    { "set": "1", "key": "1d", "target": "{prefix}1d", "device": "{line4}" }
+    
+    { "set": "2", "key": "2a", "target": "{prefix}2a", "device": "{line1}" },
+    { "set": "2", "key": "2b", "target": "{prefix}2b", "device": "{line2}" },
+    { "set": "2", "key": "2c", "target": "{prefix}2c", "device": "{line3}" },
+    { "set": "2", "key": "2d", "target": "{prefix}2d", "device": "{line4}" },
+    
+    { "set": "3", "key": "3a", "target": "{prefix}3a", "device": "{line1}" },
+    { "set": "3", "key": "3b", "target": "{prefix}3b", "device": "{line2}" },
+    { "set": "3", "key": "3c", "target": "{prefix}3c", "device": "{line3}" },
+    { "set": "3", "key": "3d", "target": "{prefix}3d", "device": "{line4}" },
+  ]
+}

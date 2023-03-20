@@ -1,0 +1,25 @@
+{
+  "name": "spawn-media-stream",
+  "version": "1.0.0",
+  "description": "Windows CLI tool to play media streams using streamlink & VLC, with audio autoconfig and multiopen",
+  "main": "index.js",
+  "bin": {
+    "spawnstream": "index.js"
+  },
+  "author": "fGeorjje <fgeorjje@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fgeorjje/spawn-media-stream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fgeorjje/spawn-media-stream/issues"
+  },
+  "homepage": "https://github.com/fgeorjje/spawn-media-stream#readme",
+  "dependencies": {
+    "prompts": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
