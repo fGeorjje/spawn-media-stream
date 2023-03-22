@@ -46,13 +46,12 @@ async function main() {
   });
   handlers.push(async (input) => {
     const channel = keys[input];
-    if (!channel) return ;
     return channel ? [channel] : CONTINUE_NEXT;
   });
   handlers.push(async (input) => {
     return input.match(/^[\w]+$/) ? 
-      CONTINUE_NEXT :
-      [{ target: config.defaultTarget.replace('{{target}}', input) }];
+      [{ target: config.defaultTarget.replace('{{target}}', input) }] :
+      CONTINUE_NEXT;
   });
   handlers.push(async (input) => {
     return [{ target: input }];
@@ -81,7 +80,6 @@ async function main() {
     if (toLaunch !== CONTINUE_NEXT) break;
   }
   
-  let first = true;
   for (const channel of toLaunch) {
     if (!channel.target) throw 'no target specified';
     if (channel.deviceName && !channel.device) 
@@ -113,15 +111,15 @@ async function main() {
       `--player-args "${vlcArgs.join(' ')}"`,
       `--title "${title}"`, '--player-continuous-http',
       '--twitch-low-latency', '--hls-segment-stream-data',
+      '--hls-live-edge 1',
       channel.target, 'best'
     ];
 
     const subprocess = spawn('streamlink', streamlinkArgs, {
       shell: true,
-      detached: !first,
-      stdio: ['inherit'],
+      detached: true,
+      stdio: ['ignore','ignore','ignore'],
     });
-    if (!first) subprocess.unref();
-    first = false;
+    subprocess.unref();
   }
 }
